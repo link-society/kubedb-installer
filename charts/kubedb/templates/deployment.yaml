@@ -35,6 +35,9 @@ spec:
         image: {{ .Values.kubedb.registry }}/{{ .Values.kubedb.repository }}:{{ .Values.kubedb.tag }}
         imagePullPolicy: {{ .Values.imagePullPolicy  }}
         args:
+      {{- if .Values.kubedb.debug }}    
+        - --  
+      {{- end }}
         - run
         - --v={{ .Values.logLevel }}
         - --governing-service=kubedb
@@ -84,6 +87,9 @@ spec:
         image: {{ .Values.enterprise.registry }}/{{ .Values.enterprise.repository }}:{{ .Values.enterprise.tag }}
         imagePullPolicy: {{ .Values.imagePullPolicy  }}
         args:
+      {{- if .Values.enterprise.debug }}    
+        - --  
+      {{- end }}
         - run
         - --v={{ .Values.logLevel }}
         - --governing-service=kubedb

@@ -8,12 +8,14 @@ kubedb:
   registry: kubedb
   repository: operator
   tag: v0.13.0-rc.0
+  debug: false
 enterprise:
   enabled: false
   registry: kubedb
   repository: kubedb-enterprise-operator
   tag: b0e90f75_linux_amd64
   port: 9443
+  debug: false
 cleaner:
   registry: appscode
   repository: kubectl
